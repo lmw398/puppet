@@ -8,6 +8,10 @@ class puppet {
 	   source => 'puppet:///modules/puppet/pull-updates.sh',
 	   mode => '0755',
 	}
+	file { '/home/puppet/.ssh/id_rsa.pub':
+           source => 'puppet:///modules/puppet/puppet.pub',
+           mode => '0600',
+        }
 	file { '/home/puppet/.ssh/id_rsa':
            source => 'puppet:///modules/puppet/puppet.priv',
            mode => '0600',
