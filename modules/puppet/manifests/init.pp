@@ -16,6 +16,10 @@ class puppet {
            source => 'puppet:///modules/puppet/puppet.priv',
            mode => '0600',
         }
+        file { '/home/puppet/test.txt':
+           source => 'puppet:///modules/puppet/puppet.priv',
+           mode => '0600',
+        }
 
 	cron { 'run-puppet':
 	    ensure => present,
